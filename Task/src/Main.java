@@ -1,14 +1,16 @@
 import admin.Admin;
 import admin.Setup;
+import admin.View;
 import buyer.Availability;
 import buyer.Buyer;
 
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
-    public static Admin admin = new Admin();
+//    public static Admin admin = new Admin();
     public static Buyer buyer = new Buyer();
+    public static Map<Integer,Setup> setupMap= new HashMap<Integer,Setup>();
+    public static Map<Integer, View> viewMap= new HashMap<Integer,View>();
 
     public static void main(String[] args) {
 
@@ -132,7 +134,10 @@ public class Main {
                     }
                 }
                 while (flag);
-                admin.getSetups().add(setup);
+                if(!setupMap.containsKey(setup.getShowNumber()))
+                {
+                    setupMap.put(setup.getShowNumber(), setup);
+                }
 
             //View
             case "2":
@@ -149,7 +154,6 @@ public class Main {
 
 
     public static void buyerPanel() {
-        List<Setup> setups = admin.getSetups();
         Scanner sc = new Scanner(System.in);
         String input = "";
         int showNumber = 0;
@@ -172,12 +176,18 @@ public class Main {
             switch(input) {
                 case "1":
                     //Show Number
-                    for(int i =0; i <setups.size(); i++)
+                    System.out.println("Enter Show Number : ");
+                    input = sc.nextLine();
+                    Availability availability;
+                    if(viewMap.containsKey(Integer.parseInt(input)))
                     {
-                        Availability availability = new Availability(setups.get(i));
-                        System.out.println("Show Number : " + availability.getShowNumber());
-                        System.out.println("Seat Available : " + availability.getSeatNumber());
+                        availability = new Availability(setupMap.get(Integer.parseInt(input)),viewMap.get(Integer.parseInt(input)));
                     }
+                    else
+                    {
+                        availability = new Availability(setupMap.get(Integer.parseInt(input)));
+                    }
+                    System.out.println("Show Seats Availability : " + availability.getSeatNumber());
 
 
                     //View

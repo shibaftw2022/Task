@@ -1,5 +1,6 @@
 package buyer;
 import admin.Setup;
+import admin.View;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,6 +14,10 @@ public class Availability {
 
     private Setup setup;
 
+    private View view;
+
+    public Availability()
+    {}
     public Availability(Setup setup)
     {
         this.setup = setup;
@@ -26,6 +31,31 @@ public class Availability {
             for(int j =0; j < setupSeat; j++)
             {
                seatNumber.add(rows.get(i)+seats.get(j));
+            }
+        }
+
+    }
+
+    public Availability(Setup setup, View view)
+    {
+        this.setup = setup;
+        this.view = view;
+        this.showNumber = setup.getShowNumber();
+        int setupRow = setup.getNumberRows();
+        int setupSeat = setup.getNumberSeats();
+        seatNumber = new ArrayList<>();
+
+        for(int i =0; i < setupRow; i++)
+        {
+            for(int j =0; j < setupSeat; j++)
+            {
+                for(int k =0; k < view.getSeatNumber().size(); k++)
+                {
+                    if(!(view.getSeatNumber().get(k).equals(rows.get(i)+seats.get(j)))){
+                        seatNumber.add(rows.get(i)+seats.get(j));
+                    }
+                }
+
             }
         }
 
