@@ -5,22 +5,27 @@ import java.util.List;
 
 public class Admin {
 
-    private List<Setup> setup ;
-    private List<View> view;
+    private List<Setup> setups ;
+    private List<View> views;
 
-    public List<Setup> getSetup() {
-        return setup;
+    public Admin()
+    {
+        this.setups = new ArrayList<>();
+        this.views = new ArrayList<>();
+    }
+    public List<Setup> getSetups() {
+        return setups;
     }
 
-    public void setSetup(List<Setup> setup) {
-        this.setup = setup;
+    public void setSetups(List<Setup> setups) {
+        this.setups = setups;
     }
 
-    public List<View> getView() {
-        return view;
+    public List<View> getViews() {
+        return views;
     }
 
-    public void setView(List<View> view) {
-        this.view = view;
+    public void setViews(List<View> views) {
+        this.views = views;
     }
 }
