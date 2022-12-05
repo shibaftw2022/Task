@@ -2,6 +2,7 @@ import admin.Admin;
 import admin.Setup;
 import admin.View;
 import buyer.Availability;
+import buyer.Book;
 import buyer.Buyer;
 
 import java.util.*;
@@ -138,7 +139,7 @@ public class Main {
                 {
                     setupMap.put(setup.getShowNumber(), setup);
                 }
-
+            break;
             //View
             case "2":
 
@@ -189,9 +190,27 @@ public class Main {
                     }
                     System.out.println("Show Seats Availability : " + availability.getSeatNumber());
 
-
-                    //View
+                    break;
+                    //Book
                 case "2":
+                    //Create new Booking
+                    Book book = new Book();
+                    //Set Show Number
+                    System.out.println("Enter Show Number: ");
+                    input = sc.nextLine();
+                    book.setShowNumber(Integer.parseInt(input));
+                    //Set Phone Number
+                    System.out.println("Enter Phone Number: ");
+                    input = sc.nextLine();
+                    book.setPhoneNumber(Integer.parseInt(input));
+                    //Set Seats Number
+                    System.out.println("Enter Seats Number: ");
+                    input = sc.nextLine();
+                    book.setPhoneNumber(Integer.parseInt(input));
+
+
+
+
 
             }
 
