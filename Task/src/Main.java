@@ -186,7 +186,13 @@ public class Main {
                     //Show Number
                     System.out.println("Enter Show Number : ");
                     input = sc.nextLine();
-                    System.out.println(buyer.getAvailability(admin,input));
+                    if(buyer.checkShowExist(admin,input))
+                    {
+                        System.out.println("Show Seats Availability : " +   buyer.getAvailability(admin,input));
+                    }
+                    else {
+                        System.out.println("Invalid Show Number.");
+                    }
                     break;
                 //Book
                 case "2":
@@ -214,6 +220,11 @@ public class Main {
                         System.out.println("Enter Seats Number: ");
                         input = sc.nextLine();
                         String[] seats = input.split(",");
+                        if(!buyer.checkValidSeats(admin,book.getShowNumber(),new ArrayList<>(Arrays.asList(seats)))){
+                            System.out.println("Invalid Seats Selection.");
+                            break;
+                        }
+
                         book.setBookedSeats(new ArrayList<>(Arrays.asList(seats)));
 
                         //Set Cancel Time

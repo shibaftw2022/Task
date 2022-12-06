@@ -4,11 +4,6 @@
     <list default="true" id="c44504f2-d22a-48c0-9dd4-ce3ef7f84c76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/Setup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/Setup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buyer/Availability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buyer/Availability.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buyer/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buyer/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/buyer/Buyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buyer/Buyer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
