@@ -8,17 +8,17 @@ import buyer.Buyer;
 import java.util.*;
 
 public class Main {
-//    public static Admin admin = new Admin();
-    public static Buyer buyer = new Buyer();
-    public static Map<Integer,Setup> setupMap= new HashMap<Integer,Setup>();
-    public static Map<Integer, View> viewMap= new HashMap<Integer,View>();
+
+//    public static Map<Integer,Setup> setupMap= new HashMap<Integer,Setup>();
+//    public static Map<Integer, View> viewMap= new HashMap<Integer,View>();
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         String input = "";
-        int showNumber = 0;
         boolean flag = true;
+        Admin admin = new Admin();
+        Buyer buyer = new Buyer();
 
         do {
             while (!(input.equals("1")) && !(input.equals("2"))) {
@@ -31,10 +31,10 @@ public class Main {
 
             switch (input) {
                 case "1":
-                    adminPanel();
+                    adminPanel(admin);
                     break;
                 case "2":
-                    buyerPanel();
+                    buyerPanel(admin,buyer);
                     break;
             }
             input = "";
@@ -42,14 +42,13 @@ public class Main {
         while(!input.equals("3"));
     }
 
-    public static void adminPanel() {
+    public static void adminPanel(Admin admin) {
+
         Scanner sc = new Scanner(System.in);
         String input = "";
-        int showNumber = 0;
         boolean flag = true;
 
         do{
-        System.out.println(input);
         while(!(input.equals("1") || input.equals("2") || input.equals("3"))) {
             System.out.println("Welcome to Admin Panel: Select choice of action");
             System.out.println("1) Setup:");
@@ -84,9 +83,8 @@ public class Main {
                     System.out.println("Enter Number of Rows (Maximum of 26 rows): ");
                     if (sc.hasNextInt()) {
                         int rows = sc.nextInt();
-                        if (rows <= 26 && rows > 0) {
+                        if (admin.checkRowInput(rows)) {
                             setup.setNumberRows(rows);
-                            System.out.println(setup.getNumberRows());
                             flag = false;
                         } else {
                             continue;
@@ -102,9 +100,9 @@ public class Main {
                 do {
                     System.out.println("Enter Number of Seats per Row (Maximum of 10 per Row): ");
                     if (sc.hasNextInt()) {
-                        int cols = sc.nextInt();
-                        if (cols <= 10 && cols > 0) {
-                            setup.setNumberSeats(cols);
+                        int seats = sc.nextInt();
+                        if (admin.checkSeatsInput(seats)) {
+                            setup.setNumberSeats(seats);
                             System.out.println(setup.getNumberSeats());
                             flag = false;
                         } else {
@@ -117,34 +115,42 @@ public class Main {
                 while (flag);
                 sc.nextLine();
 
+                System.out.println("Enter Cancellation Period (Minutes) : ");
 
-                flag = true;
-                do {
-                    System.out.println("Enter Cancellation Period (Minutes) : ");
-                    if (sc.hasNextInt()) {
-                        int mins = sc.nextInt();
-                        if (mins > 0) {
-                            setup.setCancelMins(mins);
-                            System.out.println(setup.getCancelMins());
-                            flag = false;
-                        } else {
-                            continue;
-                        }
-                    } else {
-                        sc.nextLine();
-                    }
-                }
-                while (flag);
-                if(!setupMap.containsKey(setup.getShowNumber()))
+                int mins = sc.nextInt();
+                setup.setCancelMins(mins);
+
+                if(!admin.getSetupMap().containsKey(setup.getShowNumber()))
                 {
-                    setupMap.put(setup.getShowNumber(), setup);
+                    admin.getSetupMap().put(setup.getShowNumber(), setup);
                 }
+                sc.nextLine();
             break;
             //View
             case "2":
+                //Enter Show Number
+                System.out.println("Enter Show Number : ");
+                input = sc.nextLine();
+                //If it exits
 
+                if(admin.getViewMap().containsKey(Integer.parseInt(input)))
+                {
+                    for(Book booking : admin.getViewMap().get(Integer.parseInt(input)).getBookings())
+                    {
+                        System.out.println("Show Number: " + booking.getShowNumber());
+                        System.out.println("Ticket Number: " + booking.getTicketId());
+                        System.out.println("Buyer Phone Number: " + booking.getPhoneNumber());
+                        String seats = String.join(",",booking.getBookedSeats());
+                        System.out.println("Seat Numbers: " + seats);
+                    }
+                }
+                else
+                {
+                    System.out.println("Show Number does not exist.");
+                }
+                break;
         }
-            sc.nextLine();
+//            sc.nextLine();
             input = "";
 
 
@@ -154,10 +160,10 @@ public class Main {
 
 
 
-    public static void buyerPanel() {
+    public static void buyerPanel(Admin admin, Buyer buyer) {
+
         Scanner sc = new Scanner(System.in);
         String input = "";
-        int showNumber = 0;
         boolean flag = true;
 
         do{
@@ -175,43 +181,107 @@ public class Main {
             }
 
             switch(input) {
+                //Availability
                 case "1":
                     //Show Number
                     System.out.println("Enter Show Number : ");
                     input = sc.nextLine();
-                    Availability availability;
-                    if(viewMap.containsKey(Integer.parseInt(input)))
-                    {
-                        availability = new Availability(setupMap.get(Integer.parseInt(input)),viewMap.get(Integer.parseInt(input)));
-                    }
-                    else
-                    {
-                        availability = new Availability(setupMap.get(Integer.parseInt(input)));
-                    }
-                    System.out.println("Show Seats Availability : " + availability.getSeatNumber());
-
+                    System.out.println(buyer.getAvailability(admin,input));
                     break;
-                    //Book
+                //Book
                 case "2":
                     //Create new Booking
                     Book book = new Book();
+                    boolean phone = false;
                     //Set Show Number
                     System.out.println("Enter Show Number: ");
                     input = sc.nextLine();
-                    book.setShowNumber(Integer.parseInt(input));
-                    //Set Phone Number
-                    System.out.println("Enter Phone Number: ");
+                    if(buyer.checkShowExist(admin,input)) {
+                        book.setShowNumber(Integer.parseInt(input));
+                        //Set Phone Number
+                        System.out.println("Enter Phone Number: ");
+                        input = sc.nextLine();
+                        //Check if phone exits in booking of the same show
+                        phone = buyer.checkBookingExist(admin,book.getShowNumber(),Integer.parseInt(input));
+
+                        if(phone)
+                        {
+                            System.out.println("Phone Number exist in current Booking.");
+                            break;
+                        }
+                        book.setPhoneNumber(Integer.parseInt(input));
+                        //Set Seats Number
+                        System.out.println("Enter Seats Number: ");
+                        input = sc.nextLine();
+                        String[] seats = input.split(",");
+                        book.setBookedSeats(new ArrayList<>(Arrays.asList(seats)));
+
+                        //Set Cancel Time
+                        Calendar currentTimeNow = Calendar.getInstance();
+                        currentTimeNow.add(Calendar.MINUTE, admin.getSetupMap().get(book.getShowNumber()).getCancelMins());
+                        book.setCancelTime(currentTimeNow.getTime());
+
+                        //Create UUID for Show
+                        book.setTicketId(UUID.randomUUID());
+                        //Print ticket number
+                        System.out.println(book.getTicketId());
+
+                        admin.addView(book);
+                    }
+                    else
+                    {
+                        System.out.println("Invalid Show Number.");
+                    }
+
+                    break;
+
+                case "3":
+                    View showView = new View();
+                    System.out.println("Enter Show Number to Cancel: ");
                     input = sc.nextLine();
-                    book.setPhoneNumber(Integer.parseInt(input));
-                    //Set Seats Number
-                    System.out.println("Enter Seats Number: ");
-                    input = sc.nextLine();
-                    book.setPhoneNumber(Integer.parseInt(input));
+                    //Check if it exits in view
+                    if(admin.getViewMap().containsKey(Integer.parseInt(input)))
+                    {
+                        showView = admin.getViewMap().get(Integer.parseInt(input));
+
+                        System.out.println("Enter Ticket Number to Cancel: ");
+                        input = sc.nextLine();
+
+                        //Check for the booking
+                        for(Book booking : showView.getBookings())
+                        {
+                            if(booking.getTicketId().toString().equals(input))
+                            {
+                                //Check if time permits to cancel
+                                Calendar currentTimeNow = Calendar.getInstance();
+                                Date now = currentTimeNow.getTime();
+                                if(now.before(booking.getCancelTime()))
+                                {
+                                    showView.getBookings().remove(booking);
+                                    System.out.println("Ticket Cancelled");
+                                    break;
+                                }
+                                else
+                                {
+                                    System.out.println("Ticket cannot be Cancelled as Time exceed Cancellation Time.");
+                                    break;
+                                }
+
+                            }
+                        }
+                        System.out.println("Invalid Ticket Number.");
+                    }
+                    else if(admin.getSetupMap().containsKey(Integer.parseInt(input)))
+                    {
+                        System.out.println("Show number does not have any booking.");
+                    }
+                    else
+                    {
+                        System.out.println("Invalid Show Number.");
+                    }
 
 
-
-
-
+                    break;
             }
 
             input = "";

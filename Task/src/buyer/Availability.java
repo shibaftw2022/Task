@@ -44,20 +44,25 @@ public class Availability {
         int setupRow = setup.getNumberRows();
         int setupSeat = setup.getNumberSeats();
         seatNumber = new ArrayList<>();
+        List<String> takenSeat = new ArrayList<>();
+
+
 
         for(int i =0; i < setupRow; i++)
         {
             for(int j =0; j < setupSeat; j++)
             {
-                for(int k =0; k < view.getSeatNumber().size(); k++)
-                {
-                    if(!(view.getSeatNumber().get(k).equals(rows.get(i)+seats.get(j)))){
                         seatNumber.add(rows.get(i)+seats.get(j));
                     }
-                }
-
             }
+
+        for(Book booked : view.getBookings())
+        {
+            takenSeat.addAll(booked.getBookedSeats());
         }
+
+        seatNumber.removeAll(takenSeat);
+
 
     }
 

@@ -4,7 +4,7 @@ public class Setup {
     private Integer showNumber;
     private Integer numberRows;
     private Integer numberSeats;
-    private Integer cancelMins;
+    private Integer cancelMins = 2;
 
     public Integer getShowNumber() {
         return showNumber;

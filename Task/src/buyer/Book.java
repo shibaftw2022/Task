@@ -1,5 +1,6 @@
 package buyer;
 
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -10,6 +11,8 @@ public class Book {
     private Integer phoneNumber;
 
     private List<String> bookedSeats;
+
+    private Date cancelTime;
 
     public Integer getShowNumber() {
         return showNumber;
@@ -41,5 +44,13 @@ public class Book {
 
     public void setTicketId(UUID ticketId) {
         this.ticketId = ticketId;
+    }
+
+    public Date getCancelTime() {
+        return cancelTime;
+    }
+
+    public void setCancelTime(Date cancelTime) {
+        this.cancelTime = cancelTime;
     }
 }
