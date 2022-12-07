@@ -83,6 +83,7 @@ public class Buyer {
                 if(now.before(booking.getCancelTime()))
                 {
                     view.getBookings().remove(booking);
+                    this.booking.remove(booking);
                     return true;
 
                 }

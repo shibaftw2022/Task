@@ -8,9 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c44504f2-d22a-48c0-9dd4-ce3ef7f84c76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Task/admin/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Task/admin/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Task/buyer/Buyer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Task/buyer/Buyer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/Task/BuyerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Task/BuyerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buyer/Buyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buyer/Buyer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/buyer/BuyerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/buyer/BuyerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +68,23 @@
       <recent name="admin" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BuyerTest.checkValidSeats">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Task" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Task" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AdminTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BuyerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Task" />
       <option name="PACKAGE_NAME" value="" />
@@ -78,41 +94,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BuyerTest.checkBookingExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BuyerTest.cancelBooking" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Task" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BuyerTest" />
-      <option name="METHOD_NAME" value="checkBookingExist" />
+      <option name="METHOD_NAME" value="cancelBooking" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BuyerTest.checkShowExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BuyerTest.checkValidTicket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Task" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BuyerTest" />
-      <option name="METHOD_NAME" value="checkShowExist" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BuyerTest.checkValidSeats" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Task" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BuyerTest" />
-      <option name="METHOD_NAME" value="checkValidSeats" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BuyerTest.getAvailability" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Task" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BuyerTest" />
-      <option name="METHOD_NAME" value="getAvailability" />
+      <option name="METHOD_NAME" value="checkValidTicket" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -120,11 +116,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BuyerTest.checkValidSeats" />
-        <item itemvalue="JUnit.BuyerTest.checkBookingExist" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.AdminTest" />
         <item itemvalue="JUnit.BuyerTest" />
-        <item itemvalue="JUnit.BuyerTest.checkShowExist" />
-        <item itemvalue="JUnit.BuyerTest.getAvailability" />
+        <item itemvalue="JUnit.BuyerTest.checkValidTicket" />
+        <item itemvalue="JUnit.BuyerTest.cancelBooking" />
       </list>
     </recent_temporary>
   </component>

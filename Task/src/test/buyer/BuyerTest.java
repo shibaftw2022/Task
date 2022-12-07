@@ -163,9 +163,68 @@ public class BuyerTest {
 
     @Test
     public void cancelBooking() {
+
+        input = 1;
+        View view = new View();
+        //Set show number
+        view.setShowNumber(input);
+        //Booking
+        Book booking = new Book();
+        //Set show number
+        booking.setShowNumber(input);
+        //Set phone number
+        input = 88888888;
+        booking.setPhoneNumber(input);
+        //Set booked seats
+        booking.setBookedSeats(new ArrayList<>(Arrays.asList("A1","A2")));
+        //Set Cancel Date
+        Calendar currentTimeNow = Calendar.getInstance();
+        currentTimeNow.add(Calendar.MINUTE, 2);
+        booking.setCancelTime(currentTimeNow.getTime());
+        //Set ticket id
+        UUID ticketId = UUID.randomUUID();
+        booking.setTicketId(ticketId);
+        //Add booking to view
+        view.setBookings(new ArrayList<Book>(Arrays.asList(booking)));
+        System.out.println(view.getBookings().size());
+
+        //Cancellation is possible as the time for cancellation is 2 mins.
+        assertEquals(true,buyer.cancelBooking(view,ticketId.toString()));
+
+        //Cancellation is not possible as the time for cancellation is -2 mins.
+        currentTimeNow = Calendar.getInstance();
+        currentTimeNow.add(Calendar.MINUTE, -2);
+        booking.setCancelTime(currentTimeNow.getTime());
+        view.setBookings(new ArrayList<Book>(Arrays.asList(booking)));
+        assertEquals(false,buyer.cancelBooking(view,ticketId.toString()));
+
     }
-//
-//    @Test
-//    public void checkValidTicket() {
-//    }
+
+    @Test
+    public void checkValidTicket() {
+        //Booking
+        Book booking = new Book();
+        //Set show number
+        booking.setShowNumber(input);
+        //Set phone number
+        input = 88888888;
+        booking.setPhoneNumber(input);
+        //Set booked seats
+        booking.setBookedSeats(new ArrayList<>(Arrays.asList("A1","A2")));
+        //Set Cancel Date
+        Calendar currentTimeNow = Calendar.getInstance();
+        currentTimeNow.add(Calendar.MINUTE, 2);
+        booking.setCancelTime(currentTimeNow.getTime());
+        //Set ticket id
+        UUID ticketId = UUID.randomUUID();
+        booking.setTicketId(ticketId);
+
+        buyer.getBooking().add(booking);
+
+        //Correct ticket ID the buyer have
+        assertEquals(true,buyer.checkValidTicket(ticketId.toString())) ;
+        //Incorrect ticket ID the buyer have
+        assertEquals(false,buyer.checkValidTicket(UUID.randomUUID().toString())) ;
+
+    }
 }
