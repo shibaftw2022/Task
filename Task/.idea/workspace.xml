@@ -8,8 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c44504f2-d22a-48c0-9dd4-ce3ef7f84c76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Task/AdminTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Task/AdminTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/admin/AdminTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/admin/AdminTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/buyer/BuyerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/buyer/BuyerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,14 +65,7 @@
       <recent name="admin" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AdminTest (1)">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Task" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.BuyerTest.getAvailability">
     <configuration name="AdminTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Task" />
       <option name="PACKAGE_NAME" value="" />
@@ -113,13 +105,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BuyerTest.getAvailability" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Task" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BuyerTest" />
+      <option name="METHOD_NAME" value="getAvailability" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BuyerTest.getAvailability" />
         <item itemvalue="JUnit.AdminTest (1)" />
         <item itemvalue="JUnit.AdminTest.checkSetupExist" />
         <item itemvalue="JUnit.AdminTest.checkViewExist" />
         <item itemvalue="JUnit.AdminTest.checkRowInput (1)" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
