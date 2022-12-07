@@ -2,15 +2,15 @@
 
 The basic view/Main Panel of the console will be like the following :
 
-1)Admin
-2)Buyer
-3)Exit
+1) Admin
+2) Buyer
+3) Exit
 
 Upon selecting 1 as Admin, the next menu will be the Admin Panel where the user will see :
 
-1)Setup
-2)View
-3)Back
+1) Setup
+2) View
+3) Back
 
 Upon selecting 1 as Setup, the user will be prompt the following:
 
