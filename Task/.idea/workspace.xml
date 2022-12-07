@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Task:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c44504f2-d22a-48c0-9dd4-ce3ef7f84c76" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Task_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Task.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Task/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Task/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Task/admin/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Task/admin/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Task/buyer/Buyer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Task/buyer/Buyer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buyer/Buyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buyer/Buyer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Task/AdminTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Task/AdminTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/admin/AdminTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/admin/AdminTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,26 +38,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/Desktop/Task/Task/Task&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.56666666&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "last_opened_file_path": "C:/Users/admin/Desktop/Task/Task/Task",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.56666666",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -65,7 +67,7 @@
       <recent name="admin" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AdminTest.checkRowInput (1)">
+  <component name="RunManager" selected="JUnit.AdminTest (1)">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Task" />
@@ -126,8 +128,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AdminTest.checkRowInput (1)" />
         <item itemvalue="JUnit.AdminTest (1)" />
+        <item itemvalue="JUnit.AdminTest.checkRowInput (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.AdminTest" />
         <item itemvalue="JUnit.AdminTest.checkRowInput" />

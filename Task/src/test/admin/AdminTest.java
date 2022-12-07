@@ -30,12 +30,29 @@ public class AdminTest {
 
     @Test
     public void checkSeatsInput() {
+        Admin admin = new Admin();
+        int input = 0;
+
+        //When Seats input is 0
+        assertEquals(false,admin.checkSeatsInput(input));
+
+        //When Seats input is 1
+        input = 1;
+        assertEquals(true,admin.checkSeatsInput(input));
+
+        //When Seats input is 10
+        input = 10;
+        assertEquals(true,admin.checkSeatsInput(input));
+
+        //When Seats input is greater than 10
+        input = 11;
+        assertEquals(false,admin.checkSeatsInput(input));
         
     }
 
-//    @Test
-//    public void addView() {
-//    }
+    @Test
+    public void addView() {
+    }
 //
 //    @Test
 //    public void checkViewExist() {
