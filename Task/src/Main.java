@@ -150,7 +150,6 @@ public class Main {
                 }
                 break;
         }
-//            sc.nextLine();
             input = "";
 
 
@@ -238,6 +237,7 @@ public class Main {
                         System.out.println(book.getTicketId());
 
                         admin.addView(book);
+                        buyer.getBooking().add(book);
                     }
                     else
                     {
@@ -251,7 +251,7 @@ public class Main {
                     System.out.println("Enter Show Number to Cancel: ");
                     input = sc.nextLine();
                     //Check if it exits in view
-                    if(admin.getViewMap().containsKey(Integer.parseInt(input)))
+                    if(admin.checkViewExist(Integer.parseInt(input)))
                     {
                         showView = admin.getViewMap().get(Integer.parseInt(input));
 
@@ -259,30 +259,47 @@ public class Main {
                         input = sc.nextLine();
 
                         //Check for the booking
-                        for(Book booking : showView.getBookings())
+//                        for(Book booking : showView.getBookings())
+//                        {
+//                            if(booking.getTicketId().toString().equals(input))
+//                            {
+//                                //Check if time permits to cancel
+//                                Calendar currentTimeNow = Calendar.getInstance();
+//                                Date now = currentTimeNow.getTime();
+//                                if(now.before(booking.getCancelTime()))
+//                                {
+//                                    showView.getBookings().remove(booking);
+//                                    System.out.println("Ticket Cancelled");
+//                                    break;
+//                                }
+//                                else
+//                                {
+//                                    System.out.println("Ticket cannot be Cancelled as Time exceed Cancellation Time.");
+//                                    break;
+//                                }
+//
+//                            }
+//                        }
+                        if(!buyer.checkValidTicket(input))
                         {
-                            if(booking.getTicketId().toString().equals(input))
-                            {
-                                //Check if time permits to cancel
-                                Calendar currentTimeNow = Calendar.getInstance();
-                                Date now = currentTimeNow.getTime();
-                                if(now.before(booking.getCancelTime()))
-                                {
-                                    showView.getBookings().remove(booking);
-                                    System.out.println("Ticket Cancelled");
-                                    break;
-                                }
-                                else
-                                {
-                                    System.out.println("Ticket cannot be Cancelled as Time exceed Cancellation Time.");
-                                    break;
-                                }
-
-                            }
+                            System.out.println("Invalid Ticket Number.");
+                            break;
                         }
-                        System.out.println("Invalid Ticket Number.");
+                        if(buyer.cancelBooking(showView,input))
+                        {
+                            System.out.println("Ticket Cancelled");
+
+                            break;
+                        }
+                        else
+                        {
+                            System.out.println("Ticket cannot be Cancelled as Time exceed Cancellation Time.");
+                            break;
+                        }
+
+
                     }
-                    else if(admin.getSetupMap().containsKey(Integer.parseInt(input)))
+                    else if(admin.checkSetupExist(Integer.parseInt(input)))
                     {
                         System.out.println("Show number does not have any booking.");
                     }

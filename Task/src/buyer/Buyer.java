@@ -5,19 +5,16 @@ import admin.Setup;
 import admin.View;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class Buyer {
-
-    private Integer buyerPhone;
+    
     private List<Book> booking;
 
-    public Integer getBuyerPhone() {
-        return buyerPhone;
-    }
-
-    public void setBuyerPhone(Integer buyerPhone) {
-        this.buyerPhone = buyerPhone;
+    public Buyer(){
+        this.booking = new ArrayList<>();
     }
 
     public List<Book> getBooking() {
@@ -72,7 +69,49 @@ public class Buyer {
         else {
             return false;
         }
+    }
 
+    public boolean cancelBooking(View view, String ticketId)
+    {
+        for(Book booking : view.getBookings())
+        {
+            if(booking.getTicketId().toString().equals(ticketId))
+            {
+                //Check if time permits to cancel
+                Calendar currentTimeNow = Calendar.getInstance();
+                Date now = currentTimeNow.getTime();
+                if(now.before(booking.getCancelTime()))
+                {
+                    view.getBookings().remove(booking);
+                    return true;
+//                    System.out.println("Ticket Cancelled");
+
+                }
+                else
+                {
+                    return false;
+//                    System.out.println("Ticket cannot be Cancelled as Time exceed Cancellation Time.");
+                 
+                }
+
+            }
+        }
+           return false;
+    }
+
+    public boolean checkValidTicket(String ticketId)
+    {
+        for(Book booking : booking)
+        {
+            if(booking.getTicketId().toString().equals(ticketId))
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        return false;
 
     }
 

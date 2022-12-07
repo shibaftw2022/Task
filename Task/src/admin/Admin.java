@@ -66,5 +66,27 @@ public class Admin {
         }
     }
 
+    public boolean checkViewExist(int showNumber){
+        if(viewMap.containsKey(showNumber))
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+
+    public boolean checkSetupExist(int showNumber){
+        if(setupMap.containsKey(showNumber))
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+
 
 }
