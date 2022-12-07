@@ -1,5 +1,9 @@
 # Booking a Show Application.
 
+#Executable jar file is at out -> artifacts -> Task_jar folder
+
+To execute the jar, cd to the above directory and enter the command java -jar Task.jar.
+
 The basic view/Main Panel of the console will be like the following :
 
 1) Admin
