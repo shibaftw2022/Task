@@ -1,6 +1,6 @@
 # Booking a Show Application.
 
-#Executable jar file is at out -> artifacts -> Task_jar folder
+# Executable jar file is at out -> artifacts -> Task_jar folder
 
 To execute the jar, cd to the above directory and enter the command java -jar Task.jar.
 
