@@ -1,18 +1,20 @@
 
 import admin.Admin;
+import admin.Setup;
+import admin.View;
 import org.junit.Test;
 
 
 import static org.junit.Assert.*;
 
 public class AdminTest {
-
+    Admin admin = new Admin();
+    int input = 0;
     @Test
     public void checkRowInput() {
-        Admin admin = new Admin();
-        int input = 0;
 
         //When Rows input is 0
+        input = 0;
         assertEquals(false,admin.checkRowInput(input));
 
         //When Rows input is 1
@@ -30,10 +32,10 @@ public class AdminTest {
 
     @Test
     public void checkSeatsInput() {
-        Admin admin = new Admin();
-        int input = 0;
+
 
         //When Seats input is 0
+        input = 0;
         assertEquals(false,admin.checkSeatsInput(input));
 
         //When Seats input is 1
@@ -50,15 +52,37 @@ public class AdminTest {
         
     }
 
+
     @Test
-    public void addView() {
+    public void checkViewExist() {
+        input = 1;
+        //Check if the view for a show number exist.
+        admin.getViewMap().put(input,new View());
+
+        //When input is valid in the map for view
+        assertEquals(true,admin.checkViewExist(input));
+
+        input = 2;
+
+        //When input is invalid in the map for view
+        assertEquals(false,admin.checkViewExist(input));
+
+
     }
-//
-//    @Test
-//    public void checkViewExist() {
-//    }
-//
-//    @Test
-//    public void checkSetupExist() {
-//    }
+
+    @Test
+    public void checkSetupExist() {
+        input = 1;
+        //Check if the setup for a show number exist.
+        admin.getSetupMap().put(input,new Setup());
+
+        //When input is valid in the map for setup
+        assertEquals(true,admin.checkSetupExist(input));
+
+        input = 2;
+
+        //When input is invalid in the map for setup
+        assertEquals(false,admin.checkSetupExist(input));
+
+    }
 }

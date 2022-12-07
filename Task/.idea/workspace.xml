@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c44504f2-d22a-48c0-9dd4-ce3ef7f84c76" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Task_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/Task/AdminTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Task/AdminTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/admin/AdminTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/admin/AdminTest.java" afterDir="false" />
@@ -84,22 +83,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdminTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Task" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="admin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="admin" />
-      <option name="MAIN_CLASS_NAME" value="admin.AdminTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AdminTest.checkRowInput (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Task" />
       <option name="PACKAGE_NAME" value="" />
@@ -110,17 +93,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdminTest.checkRowInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AdminTest.checkSetupExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Task" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="admin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="admin" />
-      <option name="MAIN_CLASS_NAME" value="admin.AdminTest" />
-      <option name="METHOD_NAME" value="checkRowInput" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AdminTest" />
+      <option name="METHOD_NAME" value="checkSetupExist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminTest.checkViewExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Task" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AdminTest" />
+      <option name="METHOD_NAME" value="checkViewExist" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,10 +116,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AdminTest (1)" />
+        <item itemvalue="JUnit.AdminTest.checkSetupExist" />
+        <item itemvalue="JUnit.AdminTest.checkViewExist" />
         <item itemvalue="JUnit.AdminTest.checkRowInput (1)" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.AdminTest" />
-        <item itemvalue="JUnit.AdminTest.checkRowInput" />
       </list>
     </recent_temporary>
   </component>
