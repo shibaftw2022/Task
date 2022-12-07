@@ -40,7 +40,7 @@ Upon selecting 1 as Availability, it will prompt the user for the following:
 
 - Enter Show Number: (Integer)
 
-After user input the show number, if it exist, it will display the available seats for that particular show. Assuming the input is a interger.
+After user input the show number, if it exist, it will display the available seats for that particular show.
 
 Upon selecting 2 as Book, it will prompt the user for the following:
 
