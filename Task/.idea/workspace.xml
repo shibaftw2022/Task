@@ -8,6 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c44504f2-d22a-48c0-9dd4-ce3ef7f84c76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Task/admin/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Task/admin/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Task/BuyerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Task/BuyerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/buyer/BuyerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/buyer/BuyerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,41 +68,41 @@
       <recent name="admin" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BuyerTest.getAvailability">
-    <configuration name="AdminTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BuyerTest.checkValidSeats">
+    <configuration name="BuyerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Task" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AdminTest" />
+      <option name="MAIN_CLASS_NAME" value="BuyerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdminTest.checkRowInput (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BuyerTest.checkBookingExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Task" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AdminTest" />
-      <option name="METHOD_NAME" value="checkRowInput" />
+      <option name="MAIN_CLASS_NAME" value="BuyerTest" />
+      <option name="METHOD_NAME" value="checkBookingExist" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdminTest.checkSetupExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BuyerTest.checkShowExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Task" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AdminTest" />
-      <option name="METHOD_NAME" value="checkSetupExist" />
+      <option name="MAIN_CLASS_NAME" value="BuyerTest" />
+      <option name="METHOD_NAME" value="checkShowExist" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdminTest.checkViewExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BuyerTest.checkValidSeats" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Task" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AdminTest" />
-      <option name="METHOD_NAME" value="checkViewExist" />
+      <option name="MAIN_CLASS_NAME" value="BuyerTest" />
+      <option name="METHOD_NAME" value="checkValidSeats" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -117,11 +120,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BuyerTest.checkValidSeats" />
+        <item itemvalue="JUnit.BuyerTest.checkBookingExist" />
+        <item itemvalue="JUnit.BuyerTest" />
+        <item itemvalue="JUnit.BuyerTest.checkShowExist" />
         <item itemvalue="JUnit.BuyerTest.getAvailability" />
-        <item itemvalue="JUnit.AdminTest (1)" />
-        <item itemvalue="JUnit.AdminTest.checkSetupExist" />
-        <item itemvalue="JUnit.AdminTest.checkViewExist" />
-        <item itemvalue="JUnit.AdminTest.checkRowInput (1)" />
       </list>
     </recent_temporary>
   </component>
