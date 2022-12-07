@@ -59,5 +59,10 @@ Upon selecting 3 as Cancel, it will prompt the user for the following:
 Upon correct inputs and within the cancellation time frame, cancellation of the ticket will be reflected on the view of the admin panel too.
 
 
+# Executable jar file is at out -> artifacts -> Task_jar folder
+
+To execute the jar, cd to the above directory and enter the command java -jar Task.jar.
+
+
 
 
