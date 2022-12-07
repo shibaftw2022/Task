@@ -22,7 +22,7 @@ public class BuyerTest {
     public void getAvailability() {
 
         //Test when admin got no setup and view and incorrect show number, return empty list
-        assertEquals(new ArrayList<>(),buyer.getAvailability(admin,String.valueOf(input)));
+        assertEquals(new ArrayList<>(),buyer.getAvailability(admin,input));
 
         input = 1;
         Setup setup = new Setup();
@@ -40,11 +40,11 @@ public class BuyerTest {
 
 
         //Test when admin got setup but no view and correct show number
-        assertEquals(new ArrayList<>(Arrays.asList("A1","A2","B1","B2")),buyer.getAvailability(admin,String.valueOf(setup.getShowNumber())));
+        assertEquals(new ArrayList<>(Arrays.asList("A1","A2","B1","B2")),buyer.getAvailability(admin,setup.getShowNumber()));
 
         //Test when admin got setup but no view and incorrect show number
         input = 2;
-        assertEquals(new ArrayList<>(),buyer.getAvailability(admin,String.valueOf(input)));
+        assertEquals(new ArrayList<>(),buyer.getAvailability(admin,input));
 
 
         input = 1;
@@ -72,7 +72,7 @@ public class BuyerTest {
         admin.getViewMap().put(input, view);
 
         //Test when admin got setup and view and correct show number
-        assertEquals(new ArrayList<>(Arrays.asList("B1","B2")),buyer.getAvailability(admin,String.valueOf(setup.getShowNumber())));
+        assertEquals(new ArrayList<>(Arrays.asList("B1","B2")),buyer.getAvailability(admin,setup.getShowNumber()));
 
     }
 
@@ -94,11 +94,11 @@ public class BuyerTest {
         admin.getSetupMap().put(setup.getShowNumber(),setup);
 
         //Show exist in setup
-       assertEquals(true ,buyer.checkShowExist(admin,String.valueOf(setup.getShowNumber())));
+       assertEquals(true ,buyer.checkShowExist(admin,setup.getShowNumber()));
 
        //Show does not exist in setup
        input = 2;
-       assertEquals(false ,buyer.checkShowExist(admin,String.valueOf(input)));
+       assertEquals(false ,buyer.checkShowExist(admin,input));
     }
 
     @Test

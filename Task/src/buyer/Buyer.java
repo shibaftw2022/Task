@@ -26,23 +26,23 @@ public class Buyer {
     }
 
 
-    public List<String> getAvailability(Admin admin, String input)
+    public List<String> getAvailability(Admin admin, int input)
     {
         Availability availability;
         if(checkShowExist(admin,input)) {
-            if (admin.getViewMap().containsKey(Integer.parseInt(input))) {
-                availability = new Availability(admin.getSetupMap().get(Integer.parseInt(input)), admin.getViewMap().get(Integer.parseInt(input)));
+            if (admin.getViewMap().containsKey(input)) {
+                availability = new Availability(admin.getSetupMap().get(input), admin.getViewMap().get(input));
             } else {
-                availability = new Availability(admin.getSetupMap().get(Integer.parseInt(input)));
+                availability = new Availability(admin.getSetupMap().get(input));
             }
             return availability.getSeatNumber();
         }
         return new ArrayList<>();
     }
 
-    public boolean checkShowExist(Admin admin,String input)
+    public boolean checkShowExist(Admin admin,int input)
     {
-        return admin.getSetupMap().containsKey(Integer.parseInt(input));
+        return admin.getSetupMap().containsKey(input);
     }
 
     public boolean checkBookingExist(Admin admin, int showNumber, int phoneNumber) {
@@ -60,7 +60,7 @@ public class Buyer {
     public boolean checkValidSeats(Admin admin, int showNumber,List<String> seatsSelection)
     {
 
-        List<String> availableSeats = getAvailability(admin,String.valueOf(showNumber));
+        List<String> availableSeats = getAvailability(admin,showNumber);
         availableSeats.retainAll(seatsSelection);
         if(availableSeats.equals(seatsSelection))
         {

@@ -62,6 +62,7 @@ public class Main {
         }
 
         switch(input) {
+            //Setup
             case "1":
                 //Show Number
                 Setup setup = new Setup();
@@ -103,7 +104,6 @@ public class Main {
                         int seats = sc.nextInt();
                         if (admin.checkSeatsInput(seats)) {
                             setup.setNumberSeats(seats);
-                            System.out.println(setup.getNumberSeats());
                             flag = false;
                         } else {
                             continue;
@@ -113,29 +113,53 @@ public class Main {
                     }
                 }
                 while (flag);
+
+                flag = true;
                 sc.nextLine();
+                do {
+                    System.out.println("Enter Cancellation Period (Minutes) : ");
+                    if (sc.hasNextInt()) {
+                        int mins = sc.nextInt();
+                        setup.setCancelMins(mins);
+                        flag = false;
+                    }else {
+                        sc.nextLine();
+                    }
+                }while(flag);
 
-                System.out.println("Enter Cancellation Period (Minutes) : ");
 
-                int mins = sc.nextInt();
-                setup.setCancelMins(mins);
 
                 if(!admin.getSetupMap().containsKey(setup.getShowNumber()))
                 {
                     admin.getSetupMap().put(setup.getShowNumber(), setup);
                 }
+                else
+                {
+                    System.out.println("Show already exist.");
+                }
                 sc.nextLine();
             break;
             //View
             case "2":
-                //Enter Show Number
-                System.out.println("Enter Show Number : ");
-                input = sc.nextLine();
+                flag = true;
+                int showNumber =0;
+                do {
+                    //Enter Show Number
+                    System.out.println("Enter Show Number : ");
+                    if (sc.hasNextInt()) {
+                        showNumber = sc.nextInt();
+                        flag = false;
+                    }
+                    else {
+                        sc.nextLine();
+                    }
+
+                }while(flag);
                 //If it exits
 
-                if(admin.getViewMap().containsKey(Integer.parseInt(input)))
+                if(admin.getViewMap().containsKey(showNumber))
                 {
-                    for(Book booking : admin.getViewMap().get(Integer.parseInt(input)).getBookings())
+                    for(Book booking : admin.getViewMap().get(showNumber).getBookings())
                     {
                         System.out.println("Show Number: " + booking.getShowNumber());
                         System.out.println("Ticket Number: " + booking.getTicketId());
@@ -148,6 +172,7 @@ public class Main {
                 {
                     System.out.println("Show Number does not exist.");
                 }
+                sc.nextLine();
                 break;
         }
             input = "";
@@ -163,6 +188,9 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         String input = "";
+        boolean flag = true;
+
+        int showNumber = 0;
 
         do{
             while(!(input.equals("1") || input.equals("2") || input.equals("3") || input.equals("4") )) {
@@ -182,38 +210,74 @@ public class Main {
                 //Availability
                 case "1":
                     //Show Number
-                    System.out.println("Enter Show Number : ");
-                    input = sc.nextLine();
-                    if(buyer.checkShowExist(admin,input))
+                    flag = true;
+                    do {
+                        System.out.println("Enter Show Number : ");
+                        if (sc.hasNextInt()) {
+                            showNumber = sc.nextInt();
+                            flag = false;
+                        }
+                        else {
+                            sc.nextLine();
+                        }
+                    }while(flag);
+
+                    if(buyer.checkShowExist(admin,showNumber))
                     {
-                        System.out.println("Show Seats Availability : " +   buyer.getAvailability(admin,input));
+                        System.out.println("Show Seats Availability : " +   buyer.getAvailability(admin,showNumber));
                     }
                     else {
                         System.out.println("Invalid Show Number.");
                     }
+                    sc.nextLine();
                     break;
                 //Book
                 case "2":
                     //Create new Booking
                     Book book = new Book();
                     boolean phone = false;
+                    int phoneNumber = 0;
+                    flag = true;
                     //Set Show Number
-                    System.out.println("Enter Show Number: ");
-                    input = sc.nextLine();
-                    if(buyer.checkShowExist(admin,input)) {
-                        book.setShowNumber(Integer.parseInt(input));
+                    do {
+                        System.out.println("Enter Show Number: ");
+                        if (sc.hasNextInt()) {
+                            showNumber = sc.nextInt();
+                            flag = false;
+                        }
+                        else {
+                            sc.nextLine();
+                        }
+                    }while(flag);
+                    sc.nextLine();
+                    flag = true;
+                    if(buyer.checkShowExist(admin,showNumber)) {
+                        book.setShowNumber(showNumber);
                         //Set Phone Number
-                        System.out.println("Enter Phone Number: ");
-                        input = sc.nextLine();
+
+                        do {
+                            System.out.println("Enter Phone Number: ");
+                            if (sc.hasNextInt()) {
+                                phoneNumber = sc.nextInt();
+                                flag = false;
+                            }
+                            else {
+                                sc.nextLine();
+                            }
+
+                        }while(flag);
+                        sc.nextLine();
+                        flag = true;
+
                         //Check if phone exits in booking of the same show
-                        phone = buyer.checkBookingExist(admin,book.getShowNumber(),Integer.parseInt(input));
+                        phone = buyer.checkBookingExist(admin,book.getShowNumber(),phoneNumber);
 
                         if(phone)
                         {
                             System.out.println("Phone Number exist in current Booking.");
                             break;
                         }
-                        book.setPhoneNumber(Integer.parseInt(input));
+                        book.setPhoneNumber(phoneNumber);
                         //Set Seats Number
                         System.out.println("Enter Seats Number: ");
                         input = sc.nextLine();
@@ -242,21 +306,33 @@ public class Main {
                     {
                         System.out.println("Invalid Show Number.");
                     }
-
                     break;
-
+                //Cancel
                 case "3":
                     View showView = new View();
-                    System.out.println("Enter Show Number to Cancel: ");
-                    input = sc.nextLine();
+                    flag = true;
+
+                    do {
+                        System.out.println("Enter Show Number to Cancel: ");
+                        if (sc.hasNextInt()) {
+                            showNumber = sc.nextInt();
+                            flag = false;
+                        }
+                        else {
+                            sc.nextLine();
+                        }
+
+                    }while(flag);
+
+                    sc.nextLine();
+
                     //Check if it exits in view
-                    if(admin.checkViewExist(Integer.parseInt(input)))
+                    if(admin.checkViewExist(showNumber))
                     {
-                        showView = admin.getViewMap().get(Integer.parseInt(input));
+                        showView = admin.getViewMap().get(showNumber);
 
                         System.out.println("Enter Ticket Number to Cancel: ");
                         input = sc.nextLine();
-
 
                         if(!buyer.checkValidTicket(input))
                         {
@@ -277,7 +353,7 @@ public class Main {
 
 
                     }
-                    else if(admin.checkSetupExist(Integer.parseInt(input)))
+                    else if(admin.checkSetupExist(showNumber))
                     {
                         System.out.println("Show number does not have any booking.");
                     }
@@ -285,7 +361,6 @@ public class Main {
                     {
                         System.out.println("Invalid Show Number.");
                     }
-
 
                     break;
             }
