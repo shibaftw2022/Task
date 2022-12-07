@@ -84,13 +84,11 @@ public class Buyer {
                 {
                     view.getBookings().remove(booking);
                     return true;
-//                    System.out.println("Ticket Cancelled");
 
                 }
                 else
                 {
                     return false;
-//                    System.out.println("Ticket cannot be Cancelled as Time exceed Cancellation Time.");
                  
                 }
 

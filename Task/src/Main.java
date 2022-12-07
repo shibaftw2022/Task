@@ -9,19 +9,17 @@ import java.util.*;
 
 public class Main {
 
-//    public static Map<Integer,Setup> setupMap= new HashMap<Integer,Setup>();
-//    public static Map<Integer, View> viewMap= new HashMap<Integer,View>();
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         String input = "";
-        boolean flag = true;
         Admin admin = new Admin();
         Buyer buyer = new Buyer();
 
         do {
-            while (!(input.equals("1")) && !(input.equals("2"))) {
+            input = "";
+            while (!(input.equals("1")) && !(input.equals("2")) && !(input.equals("3"))) {
                 System.out.println("Hello, kindly select the choice of user by the number : ");
                 System.out.println("1) Admin.");
                 System.out.println("2) Buyer.");
@@ -36,8 +34,10 @@ public class Main {
                 case "2":
                     buyerPanel(admin,buyer);
                     break;
+                default:
+                    break;
             }
-            input = "";
+
         }
         while(!input.equals("3"));
     }
@@ -163,7 +163,6 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         String input = "";
-        boolean flag = true;
 
         do{
             while(!(input.equals("1") || input.equals("2") || input.equals("3") || input.equals("4") )) {
@@ -258,28 +257,7 @@ public class Main {
                         System.out.println("Enter Ticket Number to Cancel: ");
                         input = sc.nextLine();
 
-                        //Check for the booking
-//                        for(Book booking : showView.getBookings())
-//                        {
-//                            if(booking.getTicketId().toString().equals(input))
-//                            {
-//                                //Check if time permits to cancel
-//                                Calendar currentTimeNow = Calendar.getInstance();
-//                                Date now = currentTimeNow.getTime();
-//                                if(now.before(booking.getCancelTime()))
-//                                {
-//                                    showView.getBookings().remove(booking);
-//                                    System.out.println("Ticket Cancelled");
-//                                    break;
-//                                }
-//                                else
-//                                {
-//                                    System.out.println("Ticket cannot be Cancelled as Time exceed Cancellation Time.");
-//                                    break;
-//                                }
-//
-//                            }
-//                        }
+
                         if(!buyer.checkValidTicket(input))
                         {
                             System.out.println("Invalid Ticket Number.");
@@ -311,11 +289,7 @@ public class Main {
 
                     break;
             }
-
             input = "";
-
-
-
         }while(true);
     }
 
